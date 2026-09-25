@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Legacy Materiais Contra Incêndio: extintores de todos os tipos, pó químico ABC com validade de 5 anos, placas de sinalização e suportes.">
+  <title>Legacy | Materiais Contra Incêndio</title>
+  <link rel="icon" type="image/png" href="imgs/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@0.469.0"></script>
+  <style>
+    #site-nav {
+      transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+    #site-nav.is-scrolled {
+      background: #ffffff;
+      border-bottom-color: rgba(17, 18, 22, .08);
+      box-shadow: 0 8px 24px rgba(17, 18, 22, .08);
+    }
+    #site-nav .nav-link {
+      color: rgba(255, 255, 255, .85);
+      transition: color .3s ease;
+    }
+    #site-nav .nav-link:hover {
+      color: #fff;
+    }
+    #site-nav.is-scrolled .nav-link {
+      color: #111216;
+    }
+    #site-nav.is-scrolled .nav-link:hover {
+      color: #ef1f2b;
+    }
+    #site-nav.is-scrolled .nav-menu-btn,
+    #site-nav.menu-open .nav-menu-btn {
+      border-color: rgba(17, 18, 22, .15);
+      color: #111216;
+    }
+
+    #site-nav.menu-open {
+      background: #ffffff;
+      border-bottom-color: rgba(17, 18, 22, .08);
+      box-shadow: 0 8px 24px rgba(17, 18, 22, .08);
+    }
+
+    .nav-menu-btn .menu-icon {
+      position: relative;
+      display: block;
+      width: 18px;
+      height: 14px;
+    }
+    .nav-menu-btn .menu-icon span {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      transition: transform .25s ease, opacity .2s ease, top .25s ease;
+    }
+    .nav-menu-btn .menu-icon span:nth-child(1) { top: 0; }
+    .nav-menu-btn .menu-icon span:nth-child(2) { top: 6px; }
+    .nav-menu-btn .menu-icon span:nth-child(3) { top: 12px; }
+    #site-nav.menu-open .nav-menu-btn .menu-icon span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+    #site-nav.menu-open .nav-menu-btn .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    #site-nav.menu-open .nav-menu-btn .menu-icon span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    #mobile-menu {
+      display: none;
+      border-top: 1px solid rgba(17, 18, 22, .08);
+      padding: .5rem 0 1.25rem;
+    }
+    #site-nav.menu-open #mobile-menu {
+      display: block;
+    }
+    @media (min-width: 768px) {
+      #mobile-menu {
+        display: none !important;
+      }
+    }
+
+    #inicio {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+
+    #hero-spacer {
+      min-height: 100svh;
+      pointer-events: none;
+    }
+
+    #site-main {
+      position: relative;
+      z-index: 20;
+      background: #fff;
+      box-shadow: 0 -24px 60px rgba(0, 0, 0, .18);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #inicio {
+        position: relative;
+      }
+      #hero-spacer {
+        display: none;
+      }
+      #site-main {
+        box-shadow: none;
+      }
+      .nav-menu-btn .menu-icon span {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="m-0 bg-white font-['Roboto',sans-serif] text-[#111216] antialiased">
+  <a class="fixed left-3 top-3 z-[60] -translate-y-24 bg-[#111216] px-4 py-2 text-sm font-semibold text-white transition-transform focus:translate-y-0" href="#conteudo">
+    Pular para o conteúdo
+  </a>
+
+  <nav id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent" aria-label="Navegação principal">
+    <div class="mx-auto flex min-h-20 w-[calc(100%-2rem)] max-w-6xl items-center justify-between md:min-h-24 md:w-[calc(100%-3rem)]">
+      <a href="#inicio" aria-label="Legacy Materiais Contra Incêndio, início">
+        <img id="nav-logo" class="h-auto w-48 md:w-56" src="imgs/logohorizontal.png" alt="Legacy Materiais Contra Incêndio">
+      </a>
+
+      <div class="hidden items-center gap-9 text-xs font-semibold uppercase tracking-wider md:flex">
+        <a class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" href="#inicio">Início</a>
+        <a class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" href="#solucoes">Soluções</a>
+        <a class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" href="#empresa">A empresa</a>
+        <a class="bg-[#ef1f2b] px-6 py-4 text-white transition-colors hover:bg-[#ce1721] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">
+          Solicitar orçamento
+        </a>
+      </div>
+
+      <button
+        type="button"
+        id="mobile-menu-toggle"
+        class="nav-menu-btn grid size-11 cursor-pointer place-items-center border border-white/20 text-white md:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menu"
+      >
+        <span class="menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden" aria-hidden="true">
+      <div class="mx-auto flex w-[calc(100%-2rem)] max-w-6xl flex-col gap-1">
+        <a class="px-1 py-3 text-sm font-semibold uppercase tracking-wider text-[#111216]" href="#inicio">Início</a>
+        <a class="px-1 py-3 text-sm font-semibold uppercase tracking-wider text-[#111216]" href="#solucoes">Soluções</a>
+        <a class="px-1 py-3 text-sm font-semibold uppercase tracking-wider text-[#111216]" href="#empresa">A empresa</a>
+        <a class="mt-2 inline-flex min-h-12 items-center justify-center bg-[#ef1f2b] px-5 text-sm font-bold uppercase tracking-wide text-white" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">
+          Solicitar orçamento
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="isolate flex min-h-svh flex-col overflow-hidden bg-[#08090b] pt-20 text-white md:pt-24" id="inicio">
+    <img class="pointer-events-none absolute inset-0 -z-30 h-full w-full object-cover" src="imgs/banner.png" alt="">
+    <canvas class="pointer-events-none absolute inset-0 -z-20 h-full w-full opacity-0 transition-opacity duration-500" id="reveal-canvas" aria-hidden="true"></canvas>
+    <div class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-[#08090b]/70 via-[#08090b]/25 to-transparent" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-[#08090b]/35 via-transparent to-[#08090b]/20" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto flex w-[calc(100%-2rem)] max-w-6xl flex-1 flex-col justify-center py-20 md:w-[calc(100%-3rem)] md:py-28" id="conteudo">
+      <p class="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#ef1f2b] drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">Materiais contra incêndio</p>
+      <h1 class="max-w-3xl text-5xl font-bold leading-[0.98] tracking-[-0.04em] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)] sm:text-6xl lg:text-7xl">
+        Proteção que chega <span class="text-[#ef1f2b]">antes do fogo.</span>
+      </h1>
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-white/90 drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] sm:text-lg">
+        Extintores, sinalização e soluções contra incêndio para empresas que não deixam a segurança ao acaso.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+        <a class="inline-flex min-h-14 items-center justify-center bg-[#ef1f2b] px-7 text-sm font-bold uppercase tracking-wide shadow-[0_10px_28px_rgba(0,0,0,0.4)] transition hover:bg-[#ce1721] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">
+          Solicitar orçamento
+        </a>
+        <a class="inline-flex min-h-12 items-center justify-center gap-2 border border-white/25 bg-black/25 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-white/50 hover:bg-black/40 sm:border-0 sm:bg-transparent sm:px-0 sm:backdrop-blur-none sm:drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)]" href="#solucoes">
+          Ver soluções
+          <i data-lucide="arrow-right" class="size-4" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div id="hero-spacer" aria-hidden="true"></div>
+
+  <main id="site-main">
+    <section class="bg-white py-20 md:py-28" id="solucoes" aria-labelledby="solucoes-title">
+      <div class="mx-auto w-[calc(100%-2rem)] max-w-6xl md:w-[calc(100%-3rem)]">
+        <div class="max-w-2xl">
+          <p class="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#ef1f2b]">
+            <i data-lucide="shield-check" class="size-4" aria-hidden="true"></i>
+            Soluções
+          </p>
+          <h2 id="solucoes-title" class="text-4xl font-bold tracking-[-0.03em] text-[#111216] sm:text-5xl">
+            Tudo que sua empresa precisa para estar preparada.
+          </h2>
+          <p class="mt-5 text-base leading-relaxed text-zinc-600 sm:text-lg">
+            Extintores de todos os tipos, placas e suportes. Comece pelo modelo que mais resolve no dia a dia: pó químico ABC com validade de 5 anos.
+          </p>
+        </div>
+
+        <article class="mt-14 overflow-hidden border border-zinc-200 bg-white md:grid md:grid-cols-[1.05fr_0.95fr]">
+          <div class="p-8 md:p-10">
+            <p class="inline-flex items-center gap-2 border border-[#ef1f2b]/20 bg-[#ef1f2b]/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#ef1f2b]">
+              <i data-lucide="badge-check" class="size-3.5" aria-hidden="true"></i>
+              Mais indicado para empresas
+            </p>
+            <h3 class="mt-5 text-3xl font-bold tracking-[-0.03em] text-[#111216] sm:text-4xl">
+              Extintor pó químico ABC <br>com <span class="text-[#ef1f2b]">5 anos de validade</span>
+            </h3>
+            <p class="mt-4 max-w-xl text-base leading-relaxed text-zinc-600">
+              Cobre classes A, B e C em um único equipamento. Menos troca, mais tranquilidade e proteção ampla para o ambiente comercial ou industrial.
+            </p>
+            <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+              <li class="flex items-start gap-2 text-sm text-zinc-700">
+                <i data-lucide="check" class="mt-0.5 size-4 shrink-0 text-[#ef1f2b]" aria-hidden="true"></i>
+                Validade de 5 anos
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-700">
+                <i data-lucide="check" class="mt-0.5 size-4 shrink-0 text-[#ef1f2b]" aria-hidden="true"></i>
+                Atua nas classes A, B e C
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-700">
+                <i data-lucide="check" class="mt-0.5 size-4 shrink-0 text-[#ef1f2b]" aria-hidden="true"></i>
+                Resposta no primeiro combate
+              </li>
+              <li class="flex items-start gap-2 text-sm text-zinc-700">
+                <i data-lucide="check" class="mt-0.5 size-4 shrink-0 text-[#ef1f2b]" aria-hidden="true"></i>
+                Ideal para empresas e condomínios
+              </li>
+            </ul>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a class="inline-flex min-h-12 items-center justify-center gap-2 bg-[#ef1f2b] px-6 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#ce1721]" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">
+                Solicitar orçamento
+                <i data-lucide="arrow-right" class="size-4" aria-hidden="true"></i>
+              </a>
+              <p class="text-sm text-zinc-500">Resposta rápida com indicação do modelo certo.</p>
+            </div>
+          </div>
+          <div class="relative min-h-72 bg-[#f3f3f4] md:min-h-full">
+            <video class="absolute inset-0 h-full w-full object-cover" src="imgs/solucoes/extintores.mp4" autoplay muted loop playsinline aria-label="Extintores de pó químico ABC"></video>
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#111216]/90 via-[#111216]/45 to-transparent p-6 pt-20 text-white">
+              <dl class="grid grid-cols-2 gap-4">
+                <div>
+                  <dt class="text-2xl font-bold text-[#ef1f2b]">5 anos</dt>
+                  <dd class="mt-1 text-sm text-white/80">de validade</dd>
+                </div>
+                <div>
+                  <dt class="text-2xl font-bold text-[#ef1f2b]">A + B + C</dt>
+                  <dd class="mt-1 text-sm text-white/80">classes cobertas</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+        <div class="mt-6 grid gap-6 md:grid-cols-3">
+          <article class="group flex flex-col overflow-hidden border border-zinc-200 bg-white transition duration-300 hover:border-zinc-300 hover:shadow-[0_16px_36px_rgba(17,18,22,0.06)]">
+            <div class="relative aspect-[4/3] overflow-hidden bg-[#f3f3f4]">
+              <img class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" src="imgs/solucoes/extintores.jpg" alt="Diferentes tipos de extintores montados na parede" loading="lazy">
+            </div>
+            <div class="flex flex-1 flex-col p-7">
+              <h3 class="text-xl font-bold tracking-[-0.02em] text-[#111216]">Linha completa de extintores</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-zinc-600 sm:text-base">
+                Água, CO₂, espuma e outros modelos. A gente indica o tipo certo conforme o risco do seu ambiente.
+              </p>
+              <a class="mt-7 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-[#111216] transition-colors hover:text-[#ef1f2b]" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">
+                Ver opções
+                <i data-lucide="arrow-up-right" class="size-4" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="group flex flex-col overflow-hidden border border-zinc-200 bg-white transition duration-300 hover:border-zinc-300 hover:shadow-[0_16px_36px_rgba(17,18,22,0.06)]">
+            <div class="relative aspect-[4/3] overflow-hidden bg-[#f3f3f4]">
+              <img class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" src="imgs/solucoes/placa.webp" alt="Placas de sinalização contra incêndio e rota de fuga" loading="lazy">
+            </div>
+            <div class="flex flex-1 flex-col p-7">
+              <h3 class="text-xl font-bold tracking-[-0.02em] text-[#111216]">Placas de sinalização</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-zinc-600 sm:text-base">
+                Rotas de fuga, extintores e áreas de risco com leitura clara para orientar rápido em emergência.
+              </p>
+              <a class="mt-7 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-[#111216] transition-colors hover:text-[#ef1f2b]" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">
+                Pedir orçamento
+                <i data-lucide="arrow-up-right" class="size-4" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="group flex flex-col overflow-hidden border border-zinc-200 bg-white transition duration-300 hover:border-zinc-300 hover:shadow-[0_16px_36px_rgba(17,18,22,0.06)]">
+            <div class="relative aspect-[4/3] overflow-hidden bg-[#f3f3f4]">
+              <img class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" src="imgs/solucoes/suporte.png" alt="Extintor fixado em suporte de parede" loading="lazy">
+            </div>
+            <div class="flex flex-1 flex-col p-7">
+              <h3 class="text-xl font-bold tracking-[-0.02em] text-[#111216]">Suportes para extintores</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-zinc-600 sm:text-base">
+                Fixação correta e acesso imediato. O equipamento fica no lugar certo, pronto para uso.
+              </p>
+              <a class="mt-7 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-[#111216] transition-colors hover:text-[#ef1f2b]" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">
+                Pedir orçamento
+                <i data-lucide="arrow-up-right" class="size-4" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-14 flex flex-col items-start justify-between gap-6 bg-[#111216] px-7 py-8 text-white sm:flex-row sm:items-center" id="orcamento">
+          <div class="max-w-xl">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#ef1f2b]">Próximo passo</p>
+            <h3 class="mt-2 text-2xl font-bold tracking-[-0.02em] sm:text-3xl">Receba um orçamento com os itens certos para o seu espaço.</h3>
+            <p class="mt-2 text-sm text-white/70 sm:text-base">Sem compromisso. A gente monta a combinação ideal de extintores, placas e suportes.</p>
+            <a class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#ef1f2b]" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="phone" class="size-4" aria-hidden="true"></i>
+              +55 21 97206-5568
+            </a>
+          </div>
+          <a class="inline-flex min-h-14 shrink-0 items-center justify-center gap-2 bg-[#ef1f2b] px-7 text-sm font-bold uppercase tracking-wide transition hover:bg-[#ce1721] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">
+            Solicitar orçamento
+            <i data-lucide="arrow-right" class="size-4" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-20 bg-[#08090b] text-white" id="empresa">
+    <div class="mx-auto w-[calc(100%-2rem)] max-w-6xl py-16 md:w-[calc(100%-3rem)] md:py-20">
+      <div class="grid gap-12 md:grid-cols-[1.3fr_0.8fr_0.9fr]">
+        <div>
+          <a href="#inicio" aria-label="Legacy Materiais Contra Incêndio, início">
+            <img class="h-auto w-48" src="imgs/logohorizontal.png" alt="Legacy Materiais Contra Incêndio">
+          </a>
+          <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/65">
+            Materiais contra incêndio para empresas que precisam de proteção no dia a dia: extintores, placas e suportes.
+          </p>
+        </div>
+
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#ef1f2b]">Navegação</p>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="text-white/75 transition-colors hover:text-white" href="#inicio">Início</a></li>
+            <li><a class="text-white/75 transition-colors hover:text-white" href="#solucoes">Soluções</a></li>
+            <li><a class="text-white/75 transition-colors hover:text-white" href="#empresa">A empresa</a></li>
+            <li><a class="text-white/75 transition-colors hover:text-white" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">Orçamento</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#ef1f2b]">Soluções</p>
+          <ul class="mt-4 space-y-3 text-sm text-white/75">
+            <li>Extintor pó químico ABC (5 anos)</li>
+            <li>Linha completa de extintores</li>
+            <li>Placas de sinalização</li>
+            <li>Suportes para extintores</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-xs text-white/45">© 2026 Legacy Materiais Contra Incêndio. Todos os direitos reservados.</p>
+        <a class="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#ef1f2b]" href="https://wa.me/5521972065568" target="_blank" rel="noopener noreferrer">
+          Solicitar orçamento
+          <i data-lucide="arrow-right" class="size-4" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    const siteNav = document.querySelector('#site-nav');
+    const navLogo = document.querySelector('#nav-logo');
+    const mobileMenu = document.querySelector('#mobile-menu');
+    const mobileToggle = document.querySelector('#mobile-menu-toggle');
+    const logoLight = 'imgs/logohorizontal.png';
+    const logoDark = 'imgs/logohorizontalblack.png';
+
+    const setMobileMenu = (open) => {
+      siteNav.classList.toggle('menu-open', open);
+      mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mobileToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    };
+
+    const syncNav = () => {
+      const scrolled = window.scrollY > 24;
+      const menuOpen = siteNav.classList.contains('menu-open');
+      siteNav.classList.toggle('is-scrolled', scrolled);
+      navLogo.src = scrolled || menuOpen ? logoDark : logoLight;
+    };
+
+    mobileToggle.addEventListener('click', () => {
+      setMobileMenu(!siteNav.classList.contains('menu-open'));
+      syncNav();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        setMobileMenu(false);
+        syncNav();
+      });
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && siteNav.classList.contains('menu-open')) {
+        setMobileMenu(false);
+        syncNav();
+      }
+    });
+
+    syncNav();
+    window.addEventListener('scroll', syncNav, { passive: true });
+
+    const hero = document.querySelector('#inicio');
+    const canvas = document.querySelector('#reveal-canvas');
+    const ctx = canvas.getContext('2d', { alpha: true });
+    const finePointer = matchMedia('(pointer: fine)');
+    const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)');
+
+    const maskCanvas = document.createElement('canvas');
+    const maskCtx = maskCanvas.getContext('2d', { alpha: true });
+    const altImage = new Image();
+    altImage.src = 'imgs/banner2.png';
+
+    const autoPilot = !finePointer.matches;
+
+    const state = {
+      x: 0,
+      y: 0,
+      vx: 0,
+      vy: 0,
+      tx: 0,
+      ty: 0,
+      radius: 150,
+      targetRadius: 150,
+      t: 0,
+      energy: 0,
+      visible: false,
+      ready: false,
+      running: false,
+      dpr: 1,
+      w: 0,
+      h: 0,
+    };
+
+    function autoPath(t) {
+      const cx = state.w * 0.58;
+      const cy = state.h * 0.46;
+      const rx = Math.max(90, state.w * 0.32);
+      const ry = Math.max(70, state.h * 0.22);
+      return {
+        x: cx + Math.sin(t * 0.19) * rx + Math.sin(t * 0.07) * rx * 0.22,
+        y: cy + Math.cos(t * 0.14) * ry + Math.sin(t * 0.27) * ry * 0.28,
+      };
+    }
+
+    function enableAutoReveal() {
+      const point = autoPath(state.t);
+      state.x = point.x;
+      state.y = point.y;
+      state.tx = point.x;
+      state.ty = point.y;
+      state.visible = true;
+      state.energy = 1;
+      state.targetRadius = Math.min(state.w, state.h) * 0.3;
+      state.radius = state.targetRadius;
+      canvas.classList.remove('opacity-0');
+    }
+
+    function coverDraw(targetCtx, img, w, h) {
+      const ir = img.width / img.height;
+      const cr = w / h;
+      let dw, dh, dx, dy;
+      if (ir > cr) {
+        dh = h;
+        dw = h * ir;
+        dx = (w - dw) / 2;
+        dy = 0;
+      } else {
+        dw = w;
+        dh = w / ir;
+        dx = 0;
+        dy = (h - dh) / 2;
+      }
+      targetCtx.drawImage(img, dx, dy, dw, dh);
+    }
+
+    function resize() {
+      const rect = hero.getBoundingClientRect();
+      state.dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+      state.w = Math.max(1, Math.floor(rect.width));
+      state.h = Math.max(1, Math.floor(rect.height));
+      const pw = Math.floor(state.w * state.dpr);
+      const ph = Math.floor(state.h * state.dpr);
+
+      canvas.width = pw;
+      canvas.height = ph;
+      maskCanvas.width = pw;
+      maskCanvas.height = ph;
+
+      if (autoPilot) enableAutoReveal();
+    }
+
+    function stampBlob(x, y, radius, strength) {
+      const dpr = state.dpr;
+      const px = x * dpr;
+      const py = y * dpr;
+      const speed = Math.hypot(state.vx, state.vy);
+      const stretch = 1 + Math.min(0.55, speed * 0.035);
+      const angle = speed > 0.4 ? Math.atan2(state.vy, state.vx) : 0;
+      const breathe = prefersReduced.matches ? 1 : 1 + Math.sin(state.t * 1.8) * 0.04;
+      const pr = Math.max(8, radius * dpr * breathe);
+
+      maskCtx.save();
+      maskCtx.translate(px, py);
+      maskCtx.rotate(angle);
+      maskCtx.scale(stretch, 1 / Math.sqrt(stretch));
+
+      const core = maskCtx.createRadialGradient(0, 0, pr * 0.05, 0, 0, pr);
+      core.addColorStop(0, `rgba(255,255,255,${0.9 * strength})`);
+      core.addColorStop(0.25, `rgba(255,255,255,${0.72 * strength})`);
+      core.addColorStop(0.55, `rgba(255,255,255,${0.32 * strength})`);
+      core.addColorStop(0.8, `rgba(255,255,255,${0.1 * strength})`);
+      core.addColorStop(1, 'rgba(255,255,255,0)');
+      maskCtx.fillStyle = core;
+      maskCtx.beginPath();
+      maskCtx.arc(0, 0, pr, 0, Math.PI * 2);
+      maskCtx.fill();
+
+      if (!prefersReduced.matches) {
+        for (let i = 0; i < 2; i++) {
+          const a = state.t * (1.1 + i * 0.4) + i * 2.4;
+          const ox = Math.cos(a) * pr * 0.22;
+          const oy = Math.sin(a * 1.15 + 1) * pr * 0.18;
+          const lr = pr * (0.55 - i * 0.08);
+          const lobe = maskCtx.createRadialGradient(ox, oy, 0, ox, oy, lr);
+          lobe.addColorStop(0, `rgba(255,255,255,${0.22 * strength})`);
+          lobe.addColorStop(0.6, `rgba(255,255,255,${0.08 * strength})`);
+          lobe.addColorStop(1, 'rgba(255,255,255,0)');
+          maskCtx.fillStyle = lobe;
+          maskCtx.beginPath();
+          maskCtx.arc(ox, oy, lr, 0, Math.PI * 2);
+          maskCtx.fill();
+        }
+      }
+
+      maskCtx.restore();
+    }
+
+    function render() {
+      if (!state.ready) return;
+
+      const fade = prefersReduced.matches
+        ? 0.35
+        : 0.008 + Math.min(0.012, Math.hypot(state.vx, state.vy) * 0.0006);
+      maskCtx.globalCompositeOperation = 'destination-out';
+      maskCtx.fillStyle = `rgba(0,0,0,${fade})`;
+      maskCtx.fillRect(0, 0, maskCanvas.width, maskCanvas.height);
+      maskCtx.globalCompositeOperation = 'source-over';
+
+      if (state.visible) {
+        stampBlob(state.x, state.y, state.radius, 1);
+        state.energy = 1;
+
+        const speed = Math.hypot(state.vx, state.vy);
+        if (speed > 3) {
+          const steps = Math.min(8, Math.ceil(speed / 4));
+          for (let i = 1; i <= steps; i++) {
+            const p = i / (steps + 1);
+            stampBlob(
+              state.x - state.vx * p,
+              state.y - state.vy * p,
+              state.radius * (1.05 - p * 0.05),
+              0.85 * (1 - p * 0.2)
+            );
+          }
+        }
+      } else {
+        state.energy *= 1 - fade;
+        if (state.energy < 0.008) {
+          canvas.classList.add('opacity-0');
+          maskCtx.clearRect(0, 0, maskCanvas.width, maskCanvas.height);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          return;
+        }
+      }
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+      coverDraw(ctx, altImage, state.w, state.h);
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.globalCompositeOperation = 'destination-in';
+      ctx.drawImage(maskCanvas, 0, 0);
+      ctx.globalCompositeOperation = 'source-over';
+    }
+
+    function tick(now) {
+      const last = tick.last || now;
+      const dt = Math.min(32, now - last) / 16.67;
+      tick.last = now;
+
+      if (autoPilot && !prefersReduced.matches) {
+        const next = autoPath(state.t);
+        state.tx = next.x;
+        state.ty = next.y;
+        state.visible = true;
+        canvas.classList.remove('opacity-0');
+      }
+
+      if (prefersReduced.matches) {
+        state.x = state.tx;
+        state.y = state.ty;
+        state.vx = 0;
+        state.vy = 0;
+      } else {
+        const stiffness = autoPilot ? 0.08 : 0.14;
+        const damping = autoPilot ? 0.86 : 0.78;
+        state.vx += (state.tx - state.x) * stiffness * dt;
+        state.vy += (state.ty - state.y) * stiffness * dt;
+        state.vx *= Math.pow(damping, dt);
+        state.vy *= Math.pow(damping, dt);
+        state.x += state.vx * dt;
+        state.y += state.vy * dt;
+      }
+      state.radius += (state.targetRadius - state.radius) * (1 - Math.pow(0.88, dt));
+      state.t += 0.05 * dt;
+
+      render();
+      requestAnimationFrame(tick);
+    }
+
+    function start() {
+      if (state.running || !state.ready) return;
+      state.running = true;
+      resize();
+      if (autoPilot) enableAutoReveal();
+      requestAnimationFrame(tick);
+    }
+
+    function setPointer(x, y, movement = 0) {
+      state.tx = x;
+      state.ty = y;
+      state.visible = true;
+      state.energy = 1;
+      const base = Math.min(state.w, state.h) * 0.36;
+      state.targetRadius = base + Math.min(56, movement * 1.8);
+      canvas.classList.remove('opacity-0');
+    }
+
+    altImage.addEventListener('load', () => {
+      state.ready = true;
+      start();
+    }, { once: true });
+
+    if (altImage.complete && altImage.naturalWidth) {
+      state.ready = true;
+      start();
+    }
+
+    window.addEventListener('resize', resize);
+
+    if (finePointer.matches) {
+      hero.addEventListener('pointerenter', (event) => {
+        const bounds = hero.getBoundingClientRect();
+        state.x = event.clientX - bounds.left;
+        state.y = event.clientY - bounds.top;
+        state.vx = 0;
+        state.vy = 0;
+        setPointer(state.x, state.y);
+      });
+
+      hero.addEventListener('pointermove', (event) => {
+        const bounds = hero.getBoundingClientRect();
+        setPointer(
+          event.clientX - bounds.left,
+          event.clientY - bounds.top,
+          Math.hypot(event.movementX, event.movementY)
+        );
+      });
+
+      hero.addEventListener('pointerleave', () => {
+        state.visible = false;
+        state.targetRadius = Math.min(state.w, state.h) * 0.18;
+      });
+    }
+  </script>
+</body>
+</html>
